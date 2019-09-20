@@ -7,7 +7,7 @@ struct JokeInteractor {
 
 extension JokeInteractor: JokeInteractorProtocol {
 	func fetchJoke() {
-		repository.getJoke(firstName: "Ciccio", lastName: "Pacciani") { result in
+		repository.getJoke(firstName: "Daniele", lastName: "Campogiani") { result in
 			switch result {
 			case .success(let joke):
 				self.presenter.update(joke: joke)

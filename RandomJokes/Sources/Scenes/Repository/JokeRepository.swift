@@ -10,7 +10,7 @@ struct JokeRepository {
 
 extension JokeRepository: JokeRepositoryProtocol {
 	func getJoke(firstName: String, lastName: String, _ handler: @escaping (Result<Joke, JokeError>) -> Void) {
-		guard let url = getUrl(firstName: "Ciccio", lastName: "Pacciani") else { return }
+		guard let url = getUrl(firstName: firstName, lastName: lastName) else { return }
 		URLSession.shared
 			.dataTask(with: url) { data, _, _ in
 				DispatchQueue.main.async {
