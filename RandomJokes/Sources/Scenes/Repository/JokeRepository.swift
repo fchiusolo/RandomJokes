@@ -1,8 +1,10 @@
 import Foundation
 
 enum JokeError: Error {
-	case apiError
-	case parsingError
+	case invalidURL
+	case emptyData
+	case parsing
+	case network(Error)
 }
 
 struct JokeRepository {
@@ -10,32 +12,50 @@ struct JokeRepository {
 
 extension JokeRepository: JokeRepositoryProtocol {
 	func getJoke(firstName: String, lastName: String, _ handler: @escaping (Result<Joke, JokeError>) -> Void) {
-		guard let url = getUrl(firstName: firstName, lastName: lastName) else { return }
+		request(.randomJoke(firstName: firstName, lastName: lastName), then: handler)
+	}
+
+	func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokeError>) -> Void) {
+		guard let url = endpoint.url else {
+			handler(.failure(JokeError.invalidURL))
+			return
+		}
+
 		URLSession.shared
-			.dataTask(with: url) { data, _, _ in
+			.dataTask(with: url) { data, _, error in
+				if let error = error {
+					DispatchQueue.main.async {
+						handler(.failure(.network(error)))
+					}
+					return
+				}
+
+				guard let data = data else {
+					DispatchQueue.main.async {
+						handler(.failure(JokeError.emptyData))
+					}
+					return
+				}
+
+				let result = (try? JSONDecoder().decode(RandomJokeResponse.self, from: data))
+					.map { $0.value }
+					.flatMap(Joke.removingPercentEncoding)
+					.map(Result.success)
+					?? .failure(JokeError.parsing)
+
 				DispatchQueue.main.async {
-					handler(self.parse(data: data))
+					handler(result)
 				}
 			}
 			.resume()
 	}
+}
 
-	func parse(data: Data?) -> Result<Joke, JokeError> {
-		guard let data = data else { return .failure(JokeError.apiError) }
-		return (try? JSONDecoder().decode(RandomJokeResponse.self, from: data))
-			.map { .success($0.value) }
-			?? .failure(JokeError.parsingError)
-	}
-
-	private func getUrl(firstName: String, lastName: String) -> URL? {
-		var components = URLComponents()
-		components.scheme = "https"
-		components.host = "api.icndb.com"
-		components.path = "/jokes/random"
-		components.queryItems = [
-			URLQueryItem(name: "firstName", value: firstName),
-			URLQueryItem(name: "lastName", value: lastName)
-		]
-		return components.url
+private extension Joke {
+	static func removingPercentEncoding(_ joke: Joke) -> Joke? {
+		return joke
+			.joke
+			.removingPercentEncoding
+			.map { Joke(id: joke.id, joke: $0) }
 	}
 }
