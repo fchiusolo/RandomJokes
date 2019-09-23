@@ -39,7 +39,6 @@ extension JokeRepository: JokeRepositoryProtocol {
 
 				let result = (try? JSONDecoder().decode(RandomJokeResponse.self, from: data))
 					.map { $0.value }
-					.flatMap(Joke.removingPercentEncoding)
 					.map(Result.success)
 					?? .failure(JokeError.parsing)
 
@@ -48,14 +47,5 @@ extension JokeRepository: JokeRepositoryProtocol {
 				}
 			}
 			.resume()
-	}
-}
-
-private extension Joke {
-	static func removingPercentEncoding(_ joke: Joke) -> Joke? {
-		return joke
-			.joke
-			.removingPercentEncoding
-			.map { Joke(id: joke.id, joke: $0) }
 	}
 }
