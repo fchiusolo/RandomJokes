@@ -8,13 +8,15 @@ class JokeViewController: UIViewController {
 // MARK:- ViewController lifecycle
 extension JokeViewController {
 	override func viewDidAppear(_ animated: Bool) {
-		setup()
-		jokeInteractor?.fetchJoke()
-	}
-
-	private func setup() {
 		let presenter = JokePresenter(view: self)
 		jokeInteractor = JokeInteractor(presenter: presenter, repository: JokeRepository())
+	}
+}
+
+// MARK:- Actions
+extension JokeViewController {
+	@IBAction func refresh(_ sender: UIBarButtonItem) {
+		jokeInteractor?.fetchJoke()
 	}
 }
 
