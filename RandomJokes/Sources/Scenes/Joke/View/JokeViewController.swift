@@ -27,10 +27,12 @@ extension JokeViewController {
 
 extension JokeViewController: JokeViewProtocol {
     func show(joke: String) {
+        jokeLabel.textColor = .black
         jokeLabel.text = joke
     }
 
     func show(error: String) {
+        jokeLabel.textColor = .red
         jokeLabel.text = error
     }
 }
