@@ -1,23 +1,16 @@
 import Foundation
 
-enum JokeError: Error {
-	case invalidURL
-	case emptyData
-	case parsing
-	case network(Error)
+struct JokesRepository {
 }
 
-struct JokeRepository {
-}
-
-extension JokeRepository: JokeRepositoryProtocol {
-	func getJoke(firstName: String, lastName: String, _ handler: @escaping (Result<Joke, JokeError>) -> Void) {
+extension JokesRepository: JokesRepositoryProtocol {
+	func getJoke(firstName: String, lastName: String, _ handler: @escaping (Result<Joke, JokesError>) -> Void) {
 		request(.randomJoke(firstName: firstName, lastName: lastName), then: handler)
 	}
 
-	func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokeError>) -> Void) {
+	func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokesError>) -> Void) {
 		guard let url = endpoint.url else {
-			handler(.failure(JokeError.invalidURL))
+			handler(.failure(JokesError.invalidURL))
 			return
 		}
 
@@ -32,7 +25,7 @@ extension JokeRepository: JokeRepositoryProtocol {
 
 				guard let data = data else {
 					DispatchQueue.main.async {
-						handler(.failure(JokeError.emptyData))
+						handler(.failure(JokesError.emptyData))
 					}
 					return
 				}
@@ -40,7 +33,7 @@ extension JokeRepository: JokeRepositoryProtocol {
 				let result = (try? JSONDecoder().decode(RandomJokeResponse.self, from: data))
 					.map { $0.value }
 					.map(Result.success)
-					?? .failure(JokeError.parsing)
+					?? .failure(JokesError.parsing)
 
 				DispatchQueue.main.async {
 					handler(result)

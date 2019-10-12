@@ -2,21 +2,26 @@ import UIKit
 
 class JokeViewController: UIViewController {
 	@IBOutlet weak var jokeLabel: UILabel!
-	var jokeInteractor: JokeInteractorProtocol?
+	var jokeInteractor: JokeInteractorProtocol!
 }
 
 // MARK:- ViewController lifecycle
 extension JokeViewController {
+	override func viewDidLoad() {
+		jokeInteractor = JokeInteractor(presenter: JokePresenter(view: self),
+										jokesRepository: JokesRepository(),
+										contactsRepository: ContactsRepository())
+	}
+
 	override func viewDidAppear(_ animated: Bool) {
-		let presenter = JokePresenter(view: self)
-		jokeInteractor = JokeInteractor(presenter: presenter, repository: JokeRepository())
+		jokeInteractor!.fetchJoke()
 	}
 }
 
 // MARK:- Actions
 extension JokeViewController {
 	@IBAction func refresh(_ sender: UIBarButtonItem) {
-		jokeInteractor?.fetchJoke()
+		jokeInteractor!.fetchJoke()
 	}
 }
 
