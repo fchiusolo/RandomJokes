@@ -168,7 +168,6 @@
 			children = (
 				40E80816233968110029196B /* Contact.swift */,
 				402F499023354F5600DDB56D /* Joke.swift */,
-				402F499223354F9000DDB56D /* RandomJokeResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +205,7 @@
 			children = (
 				402F49962335526200DDB56D /* JokesRepository.swift */,
 				402F4994233551BF00DDB56D /* JokesRepositoryProtocol.swift */,
+				402F499223354F9000DDB56D /* RandomJokeResponse.swift */,
 			);
 			path = Jokes;
 			sourceTree = "<group>";
