@@ -26,6 +26,7 @@
 		40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */; };
 		40E80817233968110029196B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80816233968110029196B /* Contact.swift */; };
 		40E808192339683D0029196B /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E808182339683D0029196B /* ContactsRepository.swift */; };
+		40F112E523523DBE00948838 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F112E423523DBE00948838 /* Person.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		40E80816233968110029196B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		40E808182339683D0029196B /* ContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
+		40F112E423523DBE00948838 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			children = (
 				40E80816233968110029196B /* Contact.swift */,
 				402F499023354F5600DDB56D /* Joke.swift */,
+				40F112E423523DBE00948838 /* Person.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -295,6 +298,7 @@
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
 				40E80817233968110029196B /* Contact.swift in Sources */,
+				40F112E523523DBE00948838 /* Person.swift in Sources */,
 				40B0588E23355F7E0069720B /* Endpoint.swift in Sources */,
 				402F498C23354ECC00DDB56D /* JokeInteractorProtocol.swift in Sources */,
 			);

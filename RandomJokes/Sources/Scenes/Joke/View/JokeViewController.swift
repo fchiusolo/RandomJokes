@@ -14,19 +14,23 @@ extension JokeViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        jokeInteractor!.fetchJoke()
+        jokeInteractor.fetchJoke()
     }
 }
 
 // MARK:- Actions
 extension JokeViewController {
     @IBAction func refresh(_ sender: UIBarButtonItem) {
-        jokeInteractor!.fetchJoke()
+        jokeInteractor.fetchJoke()
     }
 }
 
 extension JokeViewController: JokeViewProtocol {
     func show(joke: String) {
         jokeLabel.text = joke
+    }
+
+    func show(error: String) {
+        jokeLabel.text = error
     }
 }

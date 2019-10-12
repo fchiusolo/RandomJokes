@@ -11,21 +11,30 @@ extension JokeInteractor: JokeInteractorProtocol {
         contactsRepository.getContacts { result in
             switch result {
             case .success(let contact):
-                self.getJoke(firstName: contact.firstName, lastName: contact.lastName)
+                self.jokesRepository.getJoke(person: contact.person) { result in
+                    switch result {
+                    case .success(let joke):
+                        self.presenter.update(joke: joke)
+                    case .failure(let error):
+                        debugPrint(error.localizedDescription)
+                    }
+                }
             case .failure:
-                self.getJoke()
+                self.jokesRepository.getJoke(person: nil) { result in
+                    switch result {
+                    case .success(let joke):
+                        self.presenter.update(joke: joke)
+                    case .failure(let error):
+                        debugPrint(error.localizedDescription)
+                    }
+                }
             }
         }
     }
-    
-    private func getJoke(firstName: String? = nil, lastName: String? = nil) {
-        jokesRepository.getJoke(firstName: firstName ?? "Daniele", lastName: lastName ?? "Campogiani") { result in
-            switch result {
-            case .success(let joke):
-                self.presenter.update(joke: joke)
-            case .failure(let error):
-                debugPrint(error.localizedDescription)
-            }
-        }
+}
+
+private extension Contact {
+    var person: Person {
+        return Person(firstName: firstName, lastName: lastName)
     }
 }

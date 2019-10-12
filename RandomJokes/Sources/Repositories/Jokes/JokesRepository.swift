@@ -4,8 +4,8 @@ struct JokesRepository {
 }
 
 extension JokesRepository: JokesRepositoryProtocol {
-    func getJoke(firstName: String, lastName: String, _ handler: @escaping (Result<Joke, JokesError>) -> Void) {
-        request(.randomJoke(firstName: firstName, lastName: lastName), then: handler)
+    func getJoke(person: Person?, _ handler: @escaping (Result<Joke, JokesError>) -> Void) {
+        request(.randomJoke(person: person), then: handler)
     }
     
     func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokesError>) -> Void) {
