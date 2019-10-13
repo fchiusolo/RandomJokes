@@ -11,23 +11,20 @@ extension JokeInteractor: JokeInteractorProtocol {
         contactsRepository.random { result in
             switch result {
             case .success(let contact):
-                self.jokesRepository.fetch(person: contact.person) { result in
-                    switch result {
-                    case .success(let joke):
-                        self.presenter.update(joke: joke)
-                    case .failure(let error):
-                        self.presenter.update(error: error)
-                    }
-                }
+                self.joke(for: contact.person)
             case .failure:
-                self.jokesRepository.fetch(person: nil) { result in
-                    switch result {
-                    case .success(let joke):
-                        self.presenter.update(joke: joke)
-                    case .failure(let error):
-                        self.presenter.update(error: error)
-                    }
-                }
+                self.joke(for: nil)
+            }
+        }
+    }
+
+    private func joke(for person: Person?) {
+        jokesRepository.fetch(person: person) { result in
+            switch result {
+            case .success(let joke):
+                self.presenter.update(joke: joke)
+            case .failure(let error):
+                self.presenter.update(error: error)
             }
         }
     }
