@@ -16,7 +16,7 @@ extension JokeInteractor: JokeInteractorProtocol {
                     case .success(let joke):
                         self.presenter.update(joke: joke)
                     case .failure(let error):
-                        debugPrint(error.localizedDescription)
+                        self.presenter.update(error: error)
                     }
                 }
             case .failure:
@@ -25,7 +25,7 @@ extension JokeInteractor: JokeInteractorProtocol {
                     case .success(let joke):
                         self.presenter.update(joke: joke)
                     case .failure(let error):
-                        debugPrint(error.localizedDescription)
+                        self.presenter.update(error: error)
                     }
                 }
             }
