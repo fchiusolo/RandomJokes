@@ -1,5 +1,5 @@
 import Foundation
 
 protocol JokeInteractorProtocol {
-    func fetchJoke()
+    func fetch()
 }
