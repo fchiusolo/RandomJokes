@@ -8,7 +8,7 @@ struct JokeInteractor {
 
 extension JokeInteractor: JokeInteractorProtocol {
     func fetch() {
-        contactsRepository.getContacts { result in
+        contactsRepository.random { result in
             switch result {
             case .success(let contact):
                 self.jokesRepository.fetch(person: contact.person) { result in

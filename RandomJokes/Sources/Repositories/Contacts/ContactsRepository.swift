@@ -5,7 +5,7 @@ struct ContactsRepository {
 }
 
 extension ContactsRepository: ContactsRepositoryProtocol {
-    func getContacts(_ handler: @escaping Self.ContactsResponseHandler) {
+    func random(_ handler: @escaping Self.ContactsResponseHandler) {
         CNContactStore().requestAccess(for: .contacts) { access, error in
             guard access else {
                 handler(.failure(ContactsError.accessDenied))
