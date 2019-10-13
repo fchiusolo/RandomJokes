@@ -11,7 +11,7 @@ extension JokeInteractor: JokeInteractorProtocol {
         contactsRepository.getContacts { result in
             switch result {
             case .success(let contact):
-                self.jokesRepository.getJoke(person: contact.person) { result in
+                self.jokesRepository.fetch(person: contact.person) { result in
                     switch result {
                     case .success(let joke):
                         self.presenter.update(joke: joke)
@@ -20,7 +20,7 @@ extension JokeInteractor: JokeInteractorProtocol {
                     }
                 }
             case .failure:
-                self.jokesRepository.getJoke(person: nil) { result in
+                self.jokesRepository.fetch(person: nil) { result in
                     switch result {
                     case .success(let joke):
                         self.presenter.update(joke: joke)
