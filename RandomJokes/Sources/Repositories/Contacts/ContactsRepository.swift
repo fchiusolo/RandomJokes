@@ -5,7 +5,7 @@ struct ContactsRepository {}
 
 extension ContactsRepository: ContactsRepositoryProtocol {
     func request() -> Request<Contact> {
-        return RandomContactRequest()
+        return RandomContactRequest(repository: self)
     }
 
     func random(_ handler: @escaping Self.ContactsResponseHandler) {
@@ -52,6 +52,12 @@ extension ContactsRepository: ContactsRepositoryProtocol {
 }
 
 private class RandomContactRequest: Request<Contact> {
+    let repository: ContactsRepositoryProtocol
+
+    init(repository: ContactsRepositoryProtocol) {
+        self.repository = repository
+    }
+
     override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
         ContactsRepository().random {
             switch $0 {
