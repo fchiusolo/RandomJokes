@@ -52,13 +52,13 @@ extension ContactsRepository: ContactsRepositoryProtocol {
 }
 
 private class RandomContactRequest: Request<Contact> {
-    override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error?) -> Void) {
+    override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
         ContactsRepository().random {
             switch $0 {
             case .success(let contact):
                 success(contact)
-            case .failure:
-                failure(nil)
+            case .failure(let error):
+                failure(error)
             }
         }
     }
