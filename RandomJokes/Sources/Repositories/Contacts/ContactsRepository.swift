@@ -17,11 +17,11 @@ extension ContactsRepository: ContactsRepositoryProtocol {
             self.fetchAllContacts(then: handler)
         }
     }
-    
+
     private func fetchAllContacts(then handler: @escaping Self.ContactsResponseHandler) {
         let contactStore = CNContactStore()
         let keysToFetch = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)] as [CNKeyDescriptor]
-        
+
         var allContainers: [CNContainer] = []
         do {
             allContainers = try contactStore.containers(matching: nil)
@@ -29,9 +29,9 @@ extension ContactsRepository: ContactsRepositoryProtocol {
             handler(.failure(ContactsError.unknown))
             return
         }
-        
+
         var results: [CNContact] = []
-        
+
         for container in allContainers {
             let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
             do {
@@ -43,7 +43,7 @@ extension ContactsRepository: ContactsRepositoryProtocol {
                 return
             }
         }
-        
+
         results
             .randomElement()
             .map { Contact(firstName: $0.givenName, lastName: $0.familyName) }
@@ -59,7 +59,7 @@ private class RandomContactRequest: Request<Contact> {
     }
 
     override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
-        ContactsRepository().random {
+        repository.random {
             switch $0 {
             case .success(let contact):
                 success(contact)
