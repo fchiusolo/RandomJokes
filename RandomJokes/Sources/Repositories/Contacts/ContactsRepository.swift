@@ -2,7 +2,7 @@ import Foundation
 import Contacts
 
 struct ContactsRepository {
-    private let keysToFetch = [
+    private static let keysToFetch = [
         CNContactFormatter.descriptorForRequiredKeys(for: .fullName)
         ] as [CNKeyDescriptor]
 }
@@ -25,7 +25,7 @@ extension ContactsRepository: ContactsRepositoryProtocol {
     private func fetchAllContacts(then handler: @escaping Self.ContactsResponseHandler) {
         let store = CNContactStore()
         store.allContainers
-            .map { $0.contacts(in: store, keys: keysToFetch)}
+            .map { $0.contacts(in: store, keys: ContactsRepository.keysToFetch) }
             .flatMap { $0 }
             .randomElement()
             .map { Contact(firstName: $0.givenName, lastName: $0.familyName) }
