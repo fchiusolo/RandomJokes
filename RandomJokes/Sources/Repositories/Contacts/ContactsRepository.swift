@@ -2,11 +2,18 @@ import Foundation
 import Contacts
 
 struct ContactsRepository {
+    private static let keysToFetch = [
+        CNContactFormatter.descriptorForRequiredKeys(for: .fullName)
+        ] as [CNKeyDescriptor]
 }
 
 extension ContactsRepository: ContactsRepositoryProtocol {
+    func request() -> Request<Contact> {
+        return RandomContactRequest(repository: self)
+    }
+    
     func random(_ handler: @escaping Self.ContactsResponseHandler) {
-        CNContactStore().requestAccess(for: .contacts) { access, error in
+        CNContactStore().requestAccess(for: .contacts) { access, _ in
             guard access else {
                 handler(.failure(ContactsError.accessDenied))
                 return
@@ -16,34 +23,32 @@ extension ContactsRepository: ContactsRepositoryProtocol {
     }
     
     private func fetchAllContacts(then handler: @escaping Self.ContactsResponseHandler) {
-        let contactStore = CNContactStore()
-        let keysToFetch = [CNContactFormatter.descriptorForRequiredKeys(for: .fullName)] as [CNKeyDescriptor]
-        
-        var allContainers: [CNContainer] = []
-        do {
-            allContainers = try contactStore.containers(matching: nil)
-        } catch {
-            handler(.failure(ContactsError.unknown))
-            return
-        }
-        
-        var results: [CNContact] = []
-        
-        for container in allContainers {
-            let fetchPredicate = CNContact.predicateForContactsInContainer(withIdentifier: container.identifier)
-            do {
-                let containerResults = try contactStore.unifiedContacts(matching: fetchPredicate,
-                                                                        keysToFetch: keysToFetch)
-                results.append(contentsOf: containerResults)
-            } catch {
-                handler(.failure(ContactsError.unknown))
-                return
-            }
-        }
-        
-        results
+        let store = CNContactStore()
+        store.allContainers
+            .map { $0.contacts(in: store, keys: ContactsRepository.keysToFetch) }
+            .flatMap { $0 }
             .randomElement()
             .map { Contact(firstName: $0.givenName, lastName: $0.familyName) }
             .map { handler(.success($0)) }
+            ?? handler(.failure(.unknown))
+    }
+}
+
+private class RandomContactRequest: Request<Contact> {
+    let repository: ContactsRepositoryProtocol
+
+    init(repository: ContactsRepositoryProtocol) {
+        self.repository = repository
+    }
+
+    override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
+        repository.random {
+            switch $0 {
+            case .success(let contact):
+                success(contact)
+            case .failure(let error):
+                failure(error)
+            }
+        }
     }
 }
