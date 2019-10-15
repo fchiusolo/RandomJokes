@@ -1,12 +1,15 @@
 import Foundation
 import Contacts
 
-struct ContactsRepository {
-}
+struct ContactsRepository {}
 
 extension ContactsRepository: ContactsRepositoryProtocol {
+    func request() -> Request<Contact> {
+        return RandomContactRequest()
+    }
+
     func random(_ handler: @escaping Self.ContactsResponseHandler) {
-        CNContactStore().requestAccess(for: .contacts) { access, error in
+        CNContactStore().requestAccess(for: .contacts) { access, _ in
             guard access else {
                 handler(.failure(ContactsError.accessDenied))
                 return
@@ -45,5 +48,18 @@ extension ContactsRepository: ContactsRepositoryProtocol {
             .randomElement()
             .map { Contact(firstName: $0.givenName, lastName: $0.familyName) }
             .map { handler(.success($0)) }
+    }
+}
+
+private class RandomContactRequest: Request<Contact> {
+    override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error?) -> Void) {
+        ContactsRepository().random {
+            switch $0 {
+            case .success(let contact):
+                success(contact)
+            case .failure:
+                failure(nil)
+            }
+        }
     }
 }

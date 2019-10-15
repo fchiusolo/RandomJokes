@@ -7,5 +7,7 @@ enum ContactsError: Error {
 
 protocol ContactsRepositoryProtocol {
     typealias ContactsResponseHandler = (Result<Contact, ContactsError>) -> Void
+
+    func request() -> Request<Contact>
     func random(_ handler: @escaping ContactsResponseHandler)
 }
