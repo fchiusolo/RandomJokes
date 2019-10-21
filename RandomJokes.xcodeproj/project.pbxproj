@@ -83,12 +83,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40217002235E420500857833 /* Needle */ = {
+		40217002235E420500857833 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
 				40217003235E422900857833 /* NeedleGenerated.swift */,
 			);
-			path = Needle;
+			path = Dependencies;
 			sourceTree = "<group>";
 		};
 		402F495F2335423F00DDB56D = {
@@ -120,9 +120,9 @@
 			isa = PBXGroup;
 			children = (
 				402F496B2335423F00DDB56D /* AppDelegate.swift */,
+				40217002235E420500857833 /* Dependencies */,
 				40B0588C23355F6E0069720B /* Endpoints */,
 				402F498F23354F4600DDB56D /* Models */,
-				40217002235E420500857833 /* Needle */,
 				402F498423354DCE00DDB56D /* Repositories */,
 				40472BB62356449800129CDA /* Requests */,
 				402F49802335429200DDB56D /* Scenes */,
@@ -361,7 +361,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/Sources/Needle/NeedleGenerated.swift $SRCROOT/$TARGETNAME/Sources\n";
+			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/Sources/Dependencies/NeedleGenerated.swift $SRCROOT/$TARGETNAME/Sources\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
