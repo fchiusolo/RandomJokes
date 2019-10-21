@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D5C23565C8A007691DB /* CNContactStore+Containers.swift */; };
 		40115D5F23565CC4007691DB /* CNContainer+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D5E23565CC4007691DB /* CNContainer+Predicate.swift */; };
 		40115D6123565D52007691DB /* CNContainer+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D6023565D52007691DB /* CNContainer+Contacts.swift */; };
+		40216FFF235E396B00857833 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 40216FFE235E396B00857833 /* NeedleFoundation */; };
 		402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F496B2335423F00DDB56D /* AppDelegate.swift */; };
 		402F496E2335423F00DDB56D /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F496D2335423F00DDB56D /* JokeViewController.swift */; };
 		402F49712335423F00DDB56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402F496F2335423F00DDB56D /* Main.storyboard */; };
@@ -73,6 +74,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40216FFF235E396B00857833 /* NeedleFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +276,9 @@
 			dependencies = (
 			);
 			name = RandomJokes;
+			packageProductDependencies = (
+				40216FFE235E396B00857833 /* NeedleFoundation */,
+			);
 			productName = RandomJokes;
 			productReference = 402F49682335423F00DDB56D /* RandomJokes.app */;
 			productType = "com.apple.product-type.application";
@@ -302,6 +307,9 @@
 				Base,
 			);
 			mainGroup = 402F495F2335423F00DDB56D;
+			packageReferences = (
+				40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */,
+			);
 			productRefGroup = 402F49692335423F00DDB56D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -552,6 +560,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40216FFE235E396B00857833 /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 402F49602335423F00DDB56D /* Project object */;
 }
