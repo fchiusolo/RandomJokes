@@ -1,6 +1,8 @@
 import Foundation
 
-struct RandomJokeResponse: Codable {
+struct RandomJokeResponse {
     let type: String
     let value: Joke
 }
+
+extension RandomJokeResponse: Codable {}

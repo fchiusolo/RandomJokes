@@ -6,7 +6,7 @@ struct JokePresenter {
 
 extension JokePresenter: JokePresenterProtocol {
     func update(joke: Joke) {
-        view.show(joke: joke.joke)
+        view.show(joke: joke.text)
     }
 
     func update(error: Error) {

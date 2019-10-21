@@ -1,6 +1,13 @@
 import Foundation
 
-struct Joke: Codable {
+struct Joke {
     let id: Int
-    let joke: String
+    let text: String
+}
+
+extension Joke: Codable {
+    enum CodingKeys: String, CodingKey {
+        case id
+        case text = "joke"
+    }
 }
