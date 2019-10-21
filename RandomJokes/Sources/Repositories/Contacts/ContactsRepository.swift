@@ -8,10 +8,6 @@ struct ContactsRepository {
 }
 
 extension ContactsRepository: ContactsRepositoryProtocol {
-    func request() -> Request<Contact> {
-        return RandomContactRequest(repository: self)
-    }
-    
     func random(_ handler: @escaping Self.ContactsResponseHandler) {
         CNContactStore().requestAccess(for: .contacts) { access, _ in
             guard access else {
@@ -21,7 +17,7 @@ extension ContactsRepository: ContactsRepositoryProtocol {
             self.fetchAllContacts(then: handler)
         }
     }
-    
+
     private func fetchAllContacts(then handler: @escaping Self.ContactsResponseHandler) {
         let store = CNContactStore()
         store.allContainers
@@ -31,24 +27,5 @@ extension ContactsRepository: ContactsRepositoryProtocol {
             .map { Contact(firstName: $0.givenName, lastName: $0.familyName) }
             .map { handler(.success($0)) }
             ?? handler(.failure(.unknown))
-    }
-}
-
-private class RandomContactRequest: Request<Contact> {
-    let repository: ContactsRepositoryProtocol
-
-    init(repository: ContactsRepositoryProtocol) {
-        self.repository = repository
-    }
-
-    override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
-        repository.random {
-            switch $0 {
-            case .success(let contact):
-                success(contact)
-            case .failure(let error):
-                failure(error)
-            }
-        }
     }
 }

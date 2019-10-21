@@ -31,6 +31,9 @@
 		40E80817233968110029196B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80816233968110029196B /* Contact.swift */; };
 		40E808192339683D0029196B /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E808182339683D0029196B /* ContactsRepository.swift */; };
 		40F112E523523DBE00948838 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F112E423523DBE00948838 /* Person.swift */; };
+		40F48AA4235DD058004BE364 /* RandomContactRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F48AA3235DD058004BE364 /* RandomContactRequest.swift */; };
+		40F48AA7235DD09E004BE364 /* PersonJokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F48AA6235DD09E004BE364 /* PersonJokeRequest.swift */; };
+		40F48AA9235DD0D9004BE364 /* ChuckJokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F48AA8235DD0D9004BE364 /* ChuckJokeRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +63,9 @@
 		40E80816233968110029196B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		40E808182339683D0029196B /* ContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
 		40F112E423523DBE00948838 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		40F48AA3235DD058004BE364 /* RandomContactRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomContactRequest.swift; sourceTree = "<group>"; };
+		40F48AA6235DD09E004BE364 /* PersonJokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonJokeRequest.swift; sourceTree = "<group>"; };
+		40F48AA8235DD0D9004BE364 /* ChuckJokeRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChuckJokeRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				40472BB72356450E00129CDA /* Request.swift */,
+				40F48AA2235DD041004BE364 /* Contact */,
+				40F48AA5235DD088004BE364 /* Joke */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -231,6 +239,23 @@
 				402F499223354F9000DDB56D /* RandomJokeResponse.swift */,
 			);
 			path = Jokes;
+			sourceTree = "<group>";
+		};
+		40F48AA2235DD041004BE364 /* Contact */ = {
+			isa = PBXGroup;
+			children = (
+				40F48AA3235DD058004BE364 /* RandomContactRequest.swift */,
+			);
+			path = Contact;
+			sourceTree = "<group>";
+		};
+		40F48AA5235DD088004BE364 /* Joke */ = {
+			isa = PBXGroup;
+			children = (
+				40F48AA8235DD0D9004BE364 /* ChuckJokeRequest.swift */,
+				40F48AA6235DD09E004BE364 /* PersonJokeRequest.swift */,
+			);
+			path = Joke;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,12 +330,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				402F498A23354E8000DDB56D /* JokePresenter.swift in Sources */,
+				40F48AA9235DD0D9004BE364 /* ChuckJokeRequest.swift in Sources */,
 				402F498623354DEA00DDB56D /* JokeViewProtocol.swift in Sources */,
 				40115D5F23565CC4007691DB /* CNContainer+Predicate.swift in Sources */,
 				40E808192339683D0029196B /* ContactsRepository.swift in Sources */,
 				402F498823354E5600DDB56D /* JokePresenterProtocol.swift in Sources */,
 				40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */,
 				402F499323354F9000DDB56D /* RandomJokeResponse.swift in Sources */,
+				40F48AA4235DD058004BE364 /* RandomContactRequest.swift in Sources */,
 				402F4995233551BF00DDB56D /* JokesRepositoryProtocol.swift in Sources */,
 				40472BB82356450E00129CDA /* Request.swift in Sources */,
 				402F496E2335423F00DDB56D /* JokeViewController.swift in Sources */,
@@ -321,6 +348,7 @@
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
 				40E80817233968110029196B /* Contact.swift in Sources */,
+				40F48AA7235DD09E004BE364 /* PersonJokeRequest.swift in Sources */,
 				40115D6123565D52007691DB /* CNContainer+Contacts.swift in Sources */,
 				40F112E523523DBE00948838 /* Person.swift in Sources */,
 				40B0588E23355F7E0069720B /* Endpoint.swift in Sources */,
