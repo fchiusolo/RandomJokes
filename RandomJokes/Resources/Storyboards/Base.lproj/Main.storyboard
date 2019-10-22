@@ -31,9 +31,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="vD0-sY-5nG">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="56W-Af-ria"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="jokeLabel" destination="X6P-VM-DuX" id="jfF-4W-exm"/>
                     </connections>
