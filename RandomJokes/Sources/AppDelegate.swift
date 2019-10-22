@@ -1,7 +1,6 @@
 import UIKit
 
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    
+class AppDelegate: UIResponder, UIApplicationDelegate {    
     var window: UIWindow?
     
     func application(
@@ -22,5 +21,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window.makeKeyAndVisible()
         return true
     }
-    
 }
