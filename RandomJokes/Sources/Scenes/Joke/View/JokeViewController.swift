@@ -5,12 +5,13 @@ class JokeViewController: UIViewController {
     var jokeInteractor: JokeInteractorProtocol!
 }
 
-// MARK:- ViewController lifecycle
+extension JokeViewController: Storyboarded {}
+
 extension JokeViewController {
     override func viewDidLoad() {
-        jokeInteractor = JokeInteractor(presenter: JokePresenter(view: self),
-                                        jokesRepository: JokesRepository(),
-                                        contactsRepository: ContactsRepository())
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh,
+                                                            target: self,
+                                                            action: #selector(refresh))
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -18,9 +19,8 @@ extension JokeViewController {
     }
 }
 
-// MARK:- Actions
 extension JokeViewController {
-    @IBAction func refresh(_ sender: UIBarButtonItem) {
+    @objc func refresh() {
         jokeInteractor.fetch()
     }
 }
@@ -30,7 +30,7 @@ extension JokeViewController: JokeViewProtocol {
         jokeLabel.textColor = .black
         jokeLabel.text = joke
     }
-
+    
     func show(error: String) {
         jokeLabel.textColor = .red
         jokeLabel.text = error
