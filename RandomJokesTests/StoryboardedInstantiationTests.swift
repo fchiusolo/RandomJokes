@@ -3,7 +3,7 @@ import UIKit
 @testable import RandomJokes
 
 class StoryboardedInstantiationTests: XCTestCase {
-    func testJokeViewControllerExist() {
+    func testJokeViewControllerInstantiation() {
         _ = JokeViewController.instantiate()
     }
 }
