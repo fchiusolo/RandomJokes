@@ -110,13 +110,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40217002235E420500857833 /* Dependencies */ = {
+		40217002235E420500857833 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				40217003235E422900857833 /* NeedleGenerated.swift */,
 				40217007235E50A000857833 /* JokeComponent.swift */,
+				40217003235E422900857833 /* NeedleGenerated.swift */,
 			);
-			path = Dependencies;
+			path = Components;
 			sourceTree = "<group>";
 		};
 		402F495F2335423F00DDB56D = {
@@ -151,7 +151,7 @@
 			children = (
 				402F496B2335423F00DDB56D /* AppDelegate.swift */,
 				402FA90D235F357000BBC5DE /* main.swift */,
-				40217002235E420500857833 /* Dependencies */,
+				40217002235E420500857833 /* Components */,
 				40B0588C23355F6E0069720B /* Endpoints */,
 				402F498F23354F4600DDB56D /* Models */,
 				402F498423354DCE00DDB56D /* Repositories */,
