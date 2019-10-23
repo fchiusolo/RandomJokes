@@ -25,6 +25,8 @@
 		402F4995233551BF00DDB56D /* JokesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F4994233551BF00DDB56D /* JokesRepositoryProtocol.swift */; };
 		402F49972335526200DDB56D /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F49962335526200DDB56D /* JokesRepository.swift */; };
 		40472BB82356450E00129CDA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472BB72356450E00129CDA /* Request.swift */; };
+		40983BE9236088F500A94591 /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40983BE8236088F500A94591 /* HTMLDecodingTests.swift */; };
+		40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40983BF12360891300A94591 /* String+HTMLDecoding.swift */; };
 		40B0588E23355F7E0069720B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588D23355F7E0069720B /* Endpoint.swift */; };
 		40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */; };
 		40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */; };
@@ -35,6 +37,16 @@
 		40F48AA7235DD09E004BE364 /* PersonJokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F48AA6235DD09E004BE364 /* PersonJokeRequest.swift */; };
 		40F48AA9235DD0D9004BE364 /* ChuckJokeRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F48AA8235DD0D9004BE364 /* ChuckJokeRequest.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40983BEB236088F500A94591 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 402F49602335423F00DDB56D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 402F49672335423F00DDB56D;
+			remoteInfo = RandomJokes;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		40115D5C23565C8A007691DB /* CNContactStore+Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNContactStore+Containers.swift"; sourceTree = "<group>"; };
@@ -57,6 +69,10 @@
 		402F4994233551BF00DDB56D /* JokesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		402F49962335526200DDB56D /* JokesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
 		40472BB72356450E00129CDA /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		40983BE6236088F500A94591 /* RandomJokesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomJokesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40983BE8236088F500A94591 /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
+		40983BEA236088F500A94591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40983BF12360891300A94591 /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
 		40B0588D23355F7E0069720B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeEndpoint.swift; sourceTree = "<group>"; };
 		40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryProtocol.swift; sourceTree = "<group>"; };
@@ -76,6 +92,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40983BE3236088F500A94591 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				402F496A2335423F00DDB56D /* RandomJokes */,
+				40983BE7236088F500A94591 /* RandomJokesTests */,
 				402F49692335423F00DDB56D /* Products */,
 			);
 			sourceTree = "<group>";
@@ -91,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				402F49682335423F00DDB56D /* RandomJokes.app */,
+				40983BE6236088F500A94591 /* RandomJokesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -113,6 +138,7 @@
 				402F498423354DCE00DDB56D /* Repositories */,
 				40472BB62356449800129CDA /* Requests */,
 				402F49802335429200DDB56D /* Scenes */,
+				40983BF0236088FE00A94591 /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -200,6 +226,23 @@
 			path = Requests;
 			sourceTree = "<group>";
 		};
+		40983BE7236088F500A94591 /* RandomJokesTests */ = {
+			isa = PBXGroup;
+			children = (
+				40983BEA236088F500A94591 /* Info.plist */,
+				40983BE8236088F500A94591 /* HTMLDecodingTests.swift */,
+			);
+			path = RandomJokesTests;
+			sourceTree = "<group>";
+		};
+		40983BF0236088FE00A94591 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				40983BF12360891300A94591 /* String+HTMLDecoding.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		40B0588C23355F6E0069720B /* Endpoints */ = {
 			isa = PBXGroup;
 			children = (
@@ -278,18 +321,40 @@
 			productReference = 402F49682335423F00DDB56D /* RandomJokes.app */;
 			productType = "com.apple.product-type.application";
 		};
+		40983BE5236088F500A94591 /* RandomJokesTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40983BEF236088F500A94591 /* Build configuration list for PBXNativeTarget "RandomJokesTests" */;
+			buildPhases = (
+				40983BE2236088F500A94591 /* Sources */,
+				40983BE3236088F500A94591 /* Frameworks */,
+				40983BE4236088F500A94591 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40983BEC236088F500A94591 /* PBXTargetDependency */,
+			);
+			name = RandomJokesTests;
+			productName = RandomJokesTests;
+			productReference = 40983BE6236088F500A94591 /* RandomJokesTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		402F49602335423F00DDB56D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1030;
+				LastSwiftUpdateCheck = 1110;
 				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = "Francesco Chiusolo";
 				TargetAttributes = {
 					402F49672335423F00DDB56D = {
 						CreatedOnToolsVersion = 10.3;
+					};
+					40983BE5236088F500A94591 = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 402F49672335423F00DDB56D;
 					};
 				};
 			};
@@ -307,6 +372,7 @@
 			projectRoot = "";
 			targets = (
 				402F49672335423F00DDB56D /* RandomJokes */,
+				40983BE5236088F500A94591 /* RandomJokesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -319,6 +385,13 @@
 				402F49762335424100DDB56D /* LaunchScreen.storyboard in Resources */,
 				402F49732335424100DDB56D /* Assets.xcassets in Resources */,
 				402F49712335423F00DDB56D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40983BE4236088F500A94591 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,6 +419,7 @@
 				402F49972335526200DDB56D /* JokesRepository.swift in Sources */,
 				40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */,
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
+				40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
 				40E80817233968110029196B /* Contact.swift in Sources */,
 				40F48AA7235DD09E004BE364 /* PersonJokeRequest.swift in Sources */,
@@ -356,7 +430,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		40983BE2236088F500A94591 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40983BE9236088F500A94591 /* HTMLDecodingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40983BEC236088F500A94591 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 402F49672335423F00DDB56D /* RandomJokes */;
+			targetProxy = 40983BEB236088F500A94591 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		402F496F2335423F00DDB56D /* Main.storyboard */ = {
@@ -530,6 +620,48 @@
 			};
 			name = Release;
 		};
+		40983BED236088F500A94591 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MPX898GZF;
+				INFOPLIST_FILE = RandomJokesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.francescochiusolo.RandomJokesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomJokes.app/RandomJokes";
+			};
+			name = Debug;
+		};
+		40983BEE236088F500A94591 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 4MPX898GZF;
+				INFOPLIST_FILE = RandomJokesTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.francescochiusolo.RandomJokesTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RandomJokes.app/RandomJokes";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -547,6 +679,15 @@
 			buildConfigurations = (
 				402F497B2335424100DDB56D /* Debug */,
 				402F497C2335424100DDB56D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40983BEF236088F500A94591 /* Build configuration list for PBXNativeTarget "RandomJokesTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40983BED236088F500A94591 /* Debug */,
+				40983BEE236088F500A94591 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
