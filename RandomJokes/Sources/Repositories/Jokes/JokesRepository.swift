@@ -2,9 +2,23 @@ import Foundation
 
 struct JokesRepository {}
 
+struct JokeWithSubject {
+    let joke: Joke
+    let subject: String
+}
+
+extension Optional where Wrapped == Person {
+    var subject: String {
+        map { "\($0.firstName) \($0.lastName)" } ?? "Chuck Norris"
+    }
+}
+
 extension JokesRepository: JokesRepositoryProtocol {
-    func fetch(person: Person?, _ handler: @escaping (Result<Joke, JokesError>) -> Void) {
-        request(.randomJoke(person: person), then: handler)
+    func fetch(person: Person?, _ handler: @escaping (Result<JokeWithSubject, JokesError>) -> Void) {
+        request(.randomJoke(person: person)) { result in
+            let resultWithSubject = result.map { JokeWithSubject(joke: $0, subject: person.subject)}
+            handler(resultWithSubject)
+        }
     }
 
     private func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokesError>) -> Void) {

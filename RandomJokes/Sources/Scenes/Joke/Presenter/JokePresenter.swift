@@ -5,8 +5,8 @@ struct JokePresenter {
 }
 
 extension JokePresenter: JokePresenterProtocol {
-    func update(joke: Joke) {
-        guard let text = String(htmlEncodedString: joke.text) else { return }
+    func update(joke: JokeWithSubject) {
+        guard let text = String(htmlEncodedString: joke.joke.text) else { return }
         view.show(joke: text)
     }
     
