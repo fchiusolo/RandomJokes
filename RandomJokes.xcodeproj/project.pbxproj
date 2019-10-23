@@ -440,7 +440,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/Sources/Dependencies/NeedleGenerated.swift $SRCROOT/$TARGETNAME/Sources/Dependencies\n";
+			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/Sources/Components/NeedleGenerated.swift $SRCROOT/$TARGETNAME/Sources/Components\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
