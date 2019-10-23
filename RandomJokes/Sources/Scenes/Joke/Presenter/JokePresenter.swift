@@ -6,9 +6,10 @@ struct JokePresenter {
 
 extension JokePresenter: JokePresenterProtocol {
     func update(joke: Joke) {
-        view.show(joke: joke.text)
+        guard let text = String(htmlEncodedString: joke.text) else { return }
+        view.show(joke: text)
     }
-
+    
     func update(error: Error) {
         view.show(error: error.localizedDescription)
     }
