@@ -5,12 +5,21 @@ struct JokePresenter {
 }
 
 extension JokePresenter: JokePresenterProtocol {
-    func update(joke: JokeWithSubject) {
-        guard let text = String(htmlEncodedString: joke.joke.text) else { return }
-        view.show(joke: text, on: joke.subject)
+    func update(jokeAndSubject: (Joke, Person?)) {
+        let encodedJokeText = jokeAndSubject.0.text
+        let subject = jokeAndSubject.1.toString
+        guard let jokeText = String(htmlEncodedString: encodedJokeText) else { return }
+        
+        view.show(joke: jokeText, on: subject)
     }
-
+    
     func update(error: Error) {
         view.show(error: error.localizedDescription)
+    }
+}
+
+private extension Optional where Wrapped == Person {
+    var toString: String {
+        map { "\($0.firstName) \($0.lastName)" } ?? "Chuck Norris"
     }
 }

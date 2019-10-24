@@ -1,6 +1,6 @@
 import Foundation
 
-class PersonJokeRequest: Request<JokeWithSubject> {
+class PersonJokeRequest: Request<(Joke, Person?)> {
     let repository: JokesRepositoryProtocol
     let person: Person
 
@@ -9,7 +9,7 @@ class PersonJokeRequest: Request<JokeWithSubject> {
         self.person = person
     }
 
-    override func execute(success: @escaping (JokeWithSubject) -> Void, failure: @escaping (Error) -> Void) {
+    override func execute(success: @escaping ((Joke, Person?)) -> Void, failure: @escaping (Error) -> Void) {
         repository.fetch(person: person) {
             switch $0 {
             case .success(let joke):
