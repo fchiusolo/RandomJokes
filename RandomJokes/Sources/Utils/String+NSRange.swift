@@ -5,7 +5,11 @@ extension String {
         return NSString(string: self).range(of: substring)
     }
     
-    func ranges(of substring: String, offset: Int = 0) -> [NSRange] {
+    func ranges(of substring: String) -> [NSRange] {
+        return ranges(of: substring, offset: 0)
+    }
+    
+    private func ranges(of substring: String, offset: Int) -> [NSRange] {
         let firstRange = range(of: substring)
         
         if firstRange.location == NSNotFound && firstRange.length == 0 {
