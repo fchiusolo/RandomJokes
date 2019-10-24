@@ -25,20 +25,13 @@ extension JokeViewController {
 
 extension JokeViewController: JokeViewProtocol {
     func show(joke: String, on subject: String) {
-        UIView.animate(withDuration: 0.5, animations: { [weak self] in self?.fadeOut() }) { [weak self] _ in
-            self?.jokeLabel.textColor = .black
-            self?.jokeLabel.attributedText = joke.highlight(subject, with: .red)
-
-            UIView.animate(withDuration: 0.5) { [weak self] in self?.fadeIn() }
-        }
-    }
-
-    private func fadeOut() {
-        jokeLabel.alpha = 0
-    }
-
-    private func fadeIn() {
-        jokeLabel.alpha = 1
+        jokeLabel.animate([
+            .fadeOut(0.75),
+            .then { [weak self] in
+                self?.jokeLabel.textColor = .black
+                self?.jokeLabel.attributedText = joke.highlight(subject, with: .red) },
+            .fadeIn(0.75)
+        ])
     }
 
     func show(error: String) {
