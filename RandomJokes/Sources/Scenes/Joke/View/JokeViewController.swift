@@ -27,9 +27,10 @@ extension JokeViewController: JokeViewProtocol {
     func show(joke: String, on subject: String) {
         jokeLabel.animate([
             .fadeOut(0.75),
-            .then { [weak self] in
-                self?.jokeLabel.textColor = .black
-                self?.jokeLabel.attributedText = joke.highlight(subject, with: .red) },
+            .then {
+                $0.textColor = .black
+                $0.attributedText = joke.highlight(subject, with: .red)
+            },
             .fadeIn(0.75)
         ])
     }

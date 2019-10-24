@@ -1,8 +1,8 @@
 import UIKit
 
-struct Animation {
+struct Animation<Subject: UIView> {
     let duration: TimeInterval
-    let animations: (UIView) -> Void
+    let animations: (Subject) -> Void
 }
 
 extension Animation {
@@ -12,8 +12,8 @@ extension Animation {
         }
     }
 
-    static func then(_ job: @escaping () -> Void) -> Animation {
-        return Animation(duration: 0) { _ in job() }
+    static func then(_ job: @escaping (Subject) -> Void) -> Animation {
+        return Animation(duration: 0, animations: job)
     }
 
     static func fadeIn(_ duration: TimeInterval = 1) -> Animation {
@@ -23,8 +23,13 @@ extension Animation {
     }
 }
 
-extension UIView {
-    func animate(_ animations: [Animation]) {
+protocol Animatable {
+    associatedtype Subject: UIView
+    func animate(_ animations: [Animation<Subject>])
+}
+
+extension Animatable where Self: UIView {
+    func animate(_ animations: [Animation<Self>]) {
         guard !animations.isEmpty else {
             return
         }
@@ -41,3 +46,5 @@ extension UIView {
         )
     }
 }
+
+extension UILabel: Animatable {}
