@@ -30,6 +30,8 @@
 		40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40983BF12360891300A94591 /* String+HTMLDecoding.swift */; };
 		40B0588E23355F7E0069720B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588D23355F7E0069720B /* Endpoint.swift */; };
 		40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */; };
+		40D4BE082362515D00F3E793 /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D4BE072362515D00F3E793 /* String+NSRange.swift */; };
+		40D4BE0A236251B400F3E793 /* StringRangeOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */; };
 		40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */; };
 		40E80817233968110029196B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80816233968110029196B /* Contact.swift */; };
 		40E808192339683D0029196B /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E808182339683D0029196B /* ContactsRepository.swift */; };
@@ -77,6 +79,8 @@
 		40983BF12360891300A94591 /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
 		40B0588D23355F7E0069720B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeEndpoint.swift; sourceTree = "<group>"; };
+		40D4BE072362515D00F3E793 /* String+NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
+		40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRangeOperationsTests.swift; sourceTree = "<group>"; };
 		40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		40E80816233968110029196B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		40E808182339683D0029196B /* ContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 			children = (
 				40983BEA236088F500A94591 /* Info.plist */,
 				40983BE8236088F500A94591 /* HTMLDecodingTests.swift */,
+				40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */,
 			);
 			path = RandomJokesTests;
 			sourceTree = "<group>";
@@ -242,6 +247,7 @@
 			isa = PBXGroup;
 			children = (
 				40983BF12360891300A94591 /* String+HTMLDecoding.swift */,
+				40D4BE072362515D00F3E793 /* String+NSRange.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 				402F498E23354EFD00DDB56D /* JokeInteractor.swift in Sources */,
 				402F49972335526200DDB56D /* JokesRepository.swift in Sources */,
 				40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */,
+				40D4BE082362515D00F3E793 /* String+NSRange.swift in Sources */,
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
 				40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
@@ -438,6 +445,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D4BE0A236251B400F3E793 /* StringRangeOperationsTests.swift in Sources */,
 				40983BE9236088F500A94591 /* HTMLDecodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
