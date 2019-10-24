@@ -49,8 +49,4 @@ private extension String {
                                       range: range(of: substring))
         return attributedString
     }
-
-    func range(of substring: String) -> NSRange {
-        return NSString(string: self).range(of: substring)
-    }
 }
