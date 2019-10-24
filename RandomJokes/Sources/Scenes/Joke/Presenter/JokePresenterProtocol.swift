@@ -1,6 +1,6 @@
 import Foundation
 
 protocol JokePresenterProtocol {
-    func update(joke: Joke)
+    func update(jokeAndSubject: (Joke, Person?))
     func update(error: Error)
 }
