@@ -12,7 +12,7 @@ extension JokeInteractor: JokeInteractorProtocol {
             .map { $0.person }
             .chain(success: { PersonJokeRequest(repository: self.jokesRepository, person: $0) },
                    failure: { _ in ChuckJokeRequest(repository: self.jokesRepository) })
-            .execute(success: { self.presenter?.update(joke: $0) },
+            .execute(success: { self.presenter?.update(data: $0) },
                      failure: { self.presenter?.update(error: $0) })
     }
 }

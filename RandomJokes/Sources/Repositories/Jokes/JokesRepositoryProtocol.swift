@@ -8,7 +8,7 @@ enum JokesError: Error {
 }
 
 protocol JokesRepositoryProtocol {
-    typealias JokesResponseHandler = (Result<Joke, JokesError>) -> Void
+    typealias JokesResponseHandler = (Result<(Joke, Person?), JokesError>) -> Void
 
     func fetch(person: Person?, _ handler: @escaping JokesResponseHandler)
 }

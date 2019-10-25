@@ -31,8 +31,13 @@
 		402FA90C235F306200BBC5DE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA90B235F306200BBC5DE /* Storyboarded.swift */; };
 		402FA90E235F357000BBC5DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA90D235F357000BBC5DE /* main.swift */; };
 		40472BB82356450E00129CDA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472BB72356450E00129CDA /* Request.swift */; };
+		408F01AD2361E07300EEC965 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F01AC2361E07300EEC965 /* Animations.swift */; };
 		40B0588E23355F7E0069720B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588D23355F7E0069720B /* Endpoint.swift */; };
 		40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */; };
+		40D3A69B236332AB009D6BCC /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A699236332AB009D6BCC /* String+NSRange.swift */; };
+		40D3A69C236332AB009D6BCC /* String+HTMLDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */; };
+		40D3A69F23633376009D6BCC /* StringRangeOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */; };
+		40D3A6A023633376009D6BCC /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */; };
 		40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */; };
 		40E80817233968110029196B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80816233968110029196B /* Contact.swift */; };
 		40E808192339683D0029196B /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E808182339683D0029196B /* ContactsRepository.swift */; };
@@ -80,8 +85,15 @@
 		402FA90B235F306200BBC5DE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		402FA90D235F357000BBC5DE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		40472BB72356450E00129CDA /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
+		408F01AC2361E07300EEC965 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
+		40983BF12360891300A94591 /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
 		40B0588D23355F7E0069720B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeEndpoint.swift; sourceTree = "<group>"; };
+		40D3A699236332AB009D6BCC /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
+		40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
+		40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRangeOperationsTests.swift; sourceTree = "<group>"; };
+		40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
+		40D4BE072362515D00F3E793 /* String+NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
 		40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		40E80816233968110029196B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		40E808182339683D0029196B /* ContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
@@ -125,6 +137,7 @@
 				402F496A2335423F00DDB56D /* RandomJokes */,
 				402FA8FF235F05C100BBC5DE /* RandomJokesTests */,
 				402F49692335423F00DDB56D /* Products */,
+				40D3A69823633264009D6BCC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -201,6 +214,7 @@
 		402F498223354DA100DDB56D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				408F01AC2361E07300EEC965 /* Animations.swift */,
 				402F496D2335423F00DDB56D /* JokeViewController.swift */,
 				402F498523354DEA00DDB56D /* JokeViewProtocol.swift */,
 			);
@@ -238,8 +252,10 @@
 		402FA8FF235F05C100BBC5DE /* RandomJokesTests */ = {
 			isa = PBXGroup;
 			children = (
-				402FA900235F05C100BBC5DE /* StoryboardedInstantiationTests.swift */,
 				402FA902235F05C100BBC5DE /* Info.plist */,
+				40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */,
+				402FA900235F05C100BBC5DE /* StoryboardedInstantiationTests.swift */,
+				40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */,
 			);
 			path = RandomJokesTests;
 			sourceTree = "<group>";
@@ -248,6 +264,8 @@
 			isa = PBXGroup;
 			children = (
 				402FA90B235F306200BBC5DE /* Storyboarded.swift */,
+				40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */,
+				40D3A699236332AB009D6BCC /* String+NSRange.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -279,6 +297,15 @@
 				402F498223354DA100DDB56D /* View */,
 			);
 			path = Joke;
+			sourceTree = "<group>";
+		};
+		40D3A69823633264009D6BCC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				40D4BE072362515D00F3E793 /* String+NSRange.swift */,
+				40983BF12360891300A94591 /* String+HTMLDecoding.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		40E8081A233968450029196B /* Contacts */ = {
@@ -462,10 +489,12 @@
 				402F4995233551BF00DDB56D /* JokesRepositoryProtocol.swift in Sources */,
 				40472BB82356450E00129CDA /* Request.swift in Sources */,
 				402F496E2335423F00DDB56D /* JokeViewController.swift in Sources */,
+				408F01AD2361E07300EEC965 /* Animations.swift in Sources */,
 				402F499123354F5600DDB56D /* Joke.swift in Sources */,
 				402F498E23354EFD00DDB56D /* JokeInteractor.swift in Sources */,
 				402F49972335526200DDB56D /* JokesRepository.swift in Sources */,
 				40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */,
+				40D3A69C236332AB009D6BCC /* String+HTMLDecoding.swift in Sources */,
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
 				40E80817233968110029196B /* Contact.swift in Sources */,
@@ -477,6 +506,7 @@
 				402F498C23354ECC00DDB56D /* JokeInteractorProtocol.swift in Sources */,
 				40217008235E50A000857833 /* JokeComponent.swift in Sources */,
 				402FA90C235F306200BBC5DE /* Storyboarded.swift in Sources */,
+				40D3A69B236332AB009D6BCC /* String+NSRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,7 +514,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40D3A69F23633376009D6BCC /* StringRangeOperationsTests.swift in Sources */,
 				402FA901235F05C100BBC5DE /* StoryboardedInstantiationTests.swift in Sources */,
+				40D3A6A023633376009D6BCC /* HTMLDecodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,8 +3,10 @@ import Foundation
 struct JokesRepository {}
 
 extension JokesRepository: JokesRepositoryProtocol {
-    func fetch(person: Person?, _ handler: @escaping (Result<Joke, JokesError>) -> Void) {
-        request(.randomJoke(person: person), then: handler)
+    func fetch(person: Person?, _ handler: @escaping (Result<(Joke, Person?), JokesError>) -> Void) {
+        request(.randomJoke(person: person)) { result in
+            handler(result.map { ($0, person) })
+        }
     }
 
     private func request(_ endpoint: Endpoint, then handler: @escaping (Result<Joke, JokesError>) -> Void) {
