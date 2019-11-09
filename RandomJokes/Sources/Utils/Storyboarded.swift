@@ -20,6 +20,6 @@ extension Storyboarded where Self: UIViewController {
     }
 
     static func instantiate() -> Self {
-        return storyboard.instantiateViewController(withIdentifier: identifier) as! Self
+        storyboard.instantiateViewController(withIdentifier: identifier) as! Self
     }
 }
