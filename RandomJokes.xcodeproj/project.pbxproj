@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D5C23565C8A007691DB /* CNContactStore+Containers.swift */; };
 		40115D5F23565CC4007691DB /* CNContainer+Predicate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D5E23565CC4007691DB /* CNContainer+Predicate.swift */; };
 		40115D6123565D52007691DB /* CNContainer+Contacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40115D6023565D52007691DB /* CNContainer+Contacts.swift */; };
+		40216FFF235E396B00857833 /* NeedleFoundation in Frameworks */ = {isa = PBXBuildFile; productRef = 40216FFE235E396B00857833 /* NeedleFoundation */; };
+		40217004235E422900857833 /* NeedleGenerated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40217003235E422900857833 /* NeedleGenerated.swift */; };
+		40217008235E50A000857833 /* JokeComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40217007235E50A000857833 /* JokeComponent.swift */; };
 		402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F496B2335423F00DDB56D /* AppDelegate.swift */; };
 		402F496E2335423F00DDB56D /* JokeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F496D2335423F00DDB56D /* JokeViewController.swift */; };
 		402F49712335423F00DDB56D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 402F496F2335423F00DDB56D /* Main.storyboard */; };
@@ -24,14 +27,17 @@
 		402F499323354F9000DDB56D /* RandomJokeResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F499223354F9000DDB56D /* RandomJokeResponse.swift */; };
 		402F4995233551BF00DDB56D /* JokesRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F4994233551BF00DDB56D /* JokesRepositoryProtocol.swift */; };
 		402F49972335526200DDB56D /* JokesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402F49962335526200DDB56D /* JokesRepository.swift */; };
+		402FA901235F05C100BBC5DE /* StoryboardedInstantiationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA900235F05C100BBC5DE /* StoryboardedInstantiationTests.swift */; };
+		402FA90C235F306200BBC5DE /* Storyboarded.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA90B235F306200BBC5DE /* Storyboarded.swift */; };
+		402FA90E235F357000BBC5DE /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402FA90D235F357000BBC5DE /* main.swift */; };
 		40472BB82356450E00129CDA /* Request.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40472BB72356450E00129CDA /* Request.swift */; };
 		408F01AD2361E07300EEC965 /* Animations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 408F01AC2361E07300EEC965 /* Animations.swift */; };
-		40983BE9236088F500A94591 /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40983BE8236088F500A94591 /* HTMLDecodingTests.swift */; };
-		40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40983BF12360891300A94591 /* String+HTMLDecoding.swift */; };
 		40B0588E23355F7E0069720B /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588D23355F7E0069720B /* Endpoint.swift */; };
 		40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */; };
-		40D4BE082362515D00F3E793 /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D4BE072362515D00F3E793 /* String+NSRange.swift */; };
-		40D4BE0A236251B400F3E793 /* StringRangeOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */; };
+		40D3A69B236332AB009D6BCC /* String+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A699236332AB009D6BCC /* String+NSRange.swift */; };
+		40D3A69C236332AB009D6BCC /* String+HTMLDecoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */; };
+		40D3A69F23633376009D6BCC /* StringRangeOperationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */; };
+		40D3A6A023633376009D6BCC /* HTMLDecodingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */; };
 		40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */; };
 		40E80817233968110029196B /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E80816233968110029196B /* Contact.swift */; };
 		40E808192339683D0029196B /* ContactsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E808182339683D0029196B /* ContactsRepository.swift */; };
@@ -42,7 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		40983BEB236088F500A94591 /* PBXContainerItemProxy */ = {
+		402FA903235F05C100BBC5DE /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 402F49602335423F00DDB56D /* Project object */;
 			proxyType = 1;
@@ -55,6 +61,8 @@
 		40115D5C23565C8A007691DB /* CNContactStore+Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNContactStore+Containers.swift"; sourceTree = "<group>"; };
 		40115D5E23565CC4007691DB /* CNContainer+Predicate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNContainer+Predicate.swift"; sourceTree = "<group>"; };
 		40115D6023565D52007691DB /* CNContainer+Contacts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CNContainer+Contacts.swift"; sourceTree = "<group>"; };
+		40217003235E422900857833 /* NeedleGenerated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NeedleGenerated.swift; sourceTree = "<group>"; };
+		40217007235E50A000857833 /* JokeComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeComponent.swift; sourceTree = "<group>"; };
 		402F49682335423F00DDB56D /* RandomJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RandomJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		402F496B2335423F00DDB56D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		402F496D2335423F00DDB56D /* JokeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeViewController.swift; sourceTree = "<group>"; };
@@ -71,16 +79,21 @@
 		402F499223354F9000DDB56D /* RandomJokeResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeResponse.swift; sourceTree = "<group>"; };
 		402F4994233551BF00DDB56D /* JokesRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepositoryProtocol.swift; sourceTree = "<group>"; };
 		402F49962335526200DDB56D /* JokesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokesRepository.swift; sourceTree = "<group>"; };
+		402FA8FE235F05C100BBC5DE /* RandomJokesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomJokesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		402FA900235F05C100BBC5DE /* StoryboardedInstantiationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryboardedInstantiationTests.swift; sourceTree = "<group>"; };
+		402FA902235F05C100BBC5DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		402FA90B235F306200BBC5DE /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
+		402FA90D235F357000BBC5DE /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		40472BB72356450E00129CDA /* Request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Request.swift; sourceTree = "<group>"; };
 		408F01AC2361E07300EEC965 /* Animations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animations.swift; sourceTree = "<group>"; };
-		40983BE6236088F500A94591 /* RandomJokesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RandomJokesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40983BE8236088F500A94591 /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
-		40983BEA236088F500A94591 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40983BF12360891300A94591 /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
 		40B0588D23355F7E0069720B /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
 		40B0588F23355FAC0069720B /* RandomJokeEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomJokeEndpoint.swift; sourceTree = "<group>"; };
+		40D3A699236332AB009D6BCC /* String+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
+		40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+HTMLDecoding.swift"; sourceTree = "<group>"; };
+		40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRangeOperationsTests.swift; sourceTree = "<group>"; };
+		40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLDecodingTests.swift; sourceTree = "<group>"; };
 		40D4BE072362515D00F3E793 /* String+NSRange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+NSRange.swift"; sourceTree = "<group>"; };
-		40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringRangeOperationsTests.swift; sourceTree = "<group>"; };
 		40E80814233967A50029196B /* ContactsRepositoryProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepositoryProtocol.swift; sourceTree = "<group>"; };
 		40E80816233968110029196B /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		40E808182339683D0029196B /* ContactsRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactsRepository.swift; sourceTree = "<group>"; };
@@ -95,10 +108,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40216FFF235E396B00857833 /* NeedleFoundation in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40983BE3236088F500A94591 /* Frameworks */ = {
+		402FA8FB235F05C100BBC5DE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -108,12 +122,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40217002235E420500857833 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				40217007235E50A000857833 /* JokeComponent.swift */,
+				40217003235E422900857833 /* NeedleGenerated.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		402F495F2335423F00DDB56D = {
 			isa = PBXGroup;
 			children = (
 				402F496A2335423F00DDB56D /* RandomJokes */,
-				40983BE7236088F500A94591 /* RandomJokesTests */,
+				402FA8FF235F05C100BBC5DE /* RandomJokesTests */,
 				402F49692335423F00DDB56D /* Products */,
+				40D3A69823633264009D6BCC /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -121,7 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				402F49682335423F00DDB56D /* RandomJokes.app */,
-				40983BE6236088F500A94591 /* RandomJokesTests.xctest */,
+				402FA8FE235F05C100BBC5DE /* RandomJokesTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,12 +163,14 @@
 			isa = PBXGroup;
 			children = (
 				402F496B2335423F00DDB56D /* AppDelegate.swift */,
+				402FA90D235F357000BBC5DE /* main.swift */,
+				40217002235E420500857833 /* Components */,
 				40B0588C23355F6E0069720B /* Endpoints */,
 				402F498F23354F4600DDB56D /* Models */,
 				402F498423354DCE00DDB56D /* Repositories */,
 				40472BB62356449800129CDA /* Requests */,
 				402F49802335429200DDB56D /* Scenes */,
-				40983BF0236088FE00A94591 /* Utils */,
+				402FA90A235F094D00BBC5DE /* Utils */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -223,6 +249,27 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		402FA8FF235F05C100BBC5DE /* RandomJokesTests */ = {
+			isa = PBXGroup;
+			children = (
+				402FA902235F05C100BBC5DE /* Info.plist */,
+				40D3A69E23633376009D6BCC /* HTMLDecodingTests.swift */,
+				402FA900235F05C100BBC5DE /* StoryboardedInstantiationTests.swift */,
+				40D3A69D23633376009D6BCC /* StringRangeOperationsTests.swift */,
+			);
+			path = RandomJokesTests;
+			sourceTree = "<group>";
+		};
+		402FA90A235F094D00BBC5DE /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				402FA90B235F306200BBC5DE /* Storyboarded.swift */,
+				40D3A69A236332AB009D6BCC /* String+HTMLDecoding.swift */,
+				40D3A699236332AB009D6BCC /* String+NSRange.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		40472BB62356449800129CDA /* Requests */ = {
 			isa = PBXGroup;
 			children = (
@@ -231,25 +278,6 @@
 				40F48AA5235DD088004BE364 /* Joke */,
 			);
 			path = Requests;
-			sourceTree = "<group>";
-		};
-		40983BE7236088F500A94591 /* RandomJokesTests */ = {
-			isa = PBXGroup;
-			children = (
-				40983BEA236088F500A94591 /* Info.plist */,
-				40983BE8236088F500A94591 /* HTMLDecodingTests.swift */,
-				40D4BE09236251B400F3E793 /* StringRangeOperationsTests.swift */,
-			);
-			path = RandomJokesTests;
-			sourceTree = "<group>";
-		};
-		40983BF0236088FE00A94591 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				40983BF12360891300A94591 /* String+HTMLDecoding.swift */,
-				40D4BE072362515D00F3E793 /* String+NSRange.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		40B0588C23355F6E0069720B /* Endpoints */ = {
@@ -269,6 +297,15 @@
 				402F498223354DA100DDB56D /* View */,
 			);
 			path = Joke;
+			sourceTree = "<group>";
+		};
+		40D3A69823633264009D6BCC /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				40D4BE072362515D00F3E793 /* String+NSRange.swift */,
+				40983BF12360891300A94591 /* String+HTMLDecoding.swift */,
+			);
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
 		40E8081A233968450029196B /* Contacts */ = {
@@ -317,6 +354,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 402F497A2335424100DDB56D /* Build configuration list for PBXNativeTarget "RandomJokes" */;
 			buildPhases = (
+				40217000235E3CB200857833 /* Needle Generator */,
 				402F49642335423F00DDB56D /* Sources */,
 				402F49652335423F00DDB56D /* Frameworks */,
 				402F49662335423F00DDB56D /* Resources */,
@@ -326,26 +364,29 @@
 			dependencies = (
 			);
 			name = RandomJokes;
+			packageProductDependencies = (
+				40216FFE235E396B00857833 /* NeedleFoundation */,
+			);
 			productName = RandomJokes;
 			productReference = 402F49682335423F00DDB56D /* RandomJokes.app */;
 			productType = "com.apple.product-type.application";
 		};
-		40983BE5236088F500A94591 /* RandomJokesTests */ = {
+		402FA8FD235F05C100BBC5DE /* RandomJokesTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 40983BEF236088F500A94591 /* Build configuration list for PBXNativeTarget "RandomJokesTests" */;
+			buildConfigurationList = 402FA907235F05C100BBC5DE /* Build configuration list for PBXNativeTarget "RandomJokesTests" */;
 			buildPhases = (
-				40983BE2236088F500A94591 /* Sources */,
-				40983BE3236088F500A94591 /* Frameworks */,
-				40983BE4236088F500A94591 /* Resources */,
+				402FA8FA235F05C100BBC5DE /* Sources */,
+				402FA8FB235F05C100BBC5DE /* Frameworks */,
+				402FA8FC235F05C100BBC5DE /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				40983BEC236088F500A94591 /* PBXTargetDependency */,
+				402FA904235F05C100BBC5DE /* PBXTargetDependency */,
 			);
 			name = RandomJokesTests;
 			productName = RandomJokesTests;
-			productReference = 40983BE6236088F500A94591 /* RandomJokesTests.xctest */;
+			productReference = 402FA8FE235F05C100BBC5DE /* RandomJokesTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -361,7 +402,7 @@
 					402F49672335423F00DDB56D = {
 						CreatedOnToolsVersion = 10.3;
 					};
-					40983BE5236088F500A94591 = {
+					402FA8FD235F05C100BBC5DE = {
 						CreatedOnToolsVersion = 11.1;
 						TestTargetID = 402F49672335423F00DDB56D;
 					};
@@ -376,12 +417,15 @@
 				Base,
 			);
 			mainGroup = 402F495F2335423F00DDB56D;
+			packageReferences = (
+				40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */,
+			);
 			productRefGroup = 402F49692335423F00DDB56D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				402F49672335423F00DDB56D /* RandomJokes */,
-				40983BE5236088F500A94591 /* RandomJokesTests */,
+				402FA8FD235F05C100BBC5DE /* RandomJokesTests */,
 			);
 		};
 /* End PBXProject section */
@@ -397,7 +441,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40983BE4236088F500A94591 /* Resources */ = {
+		402FA8FC235F05C100BBC5DE /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -405,6 +449,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		40217000235E3CB200857833 /* Needle Generator */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Needle Generator";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export SOURCEKIT_LOGGING=0 && needle generate $SRCROOT/$TARGETNAME/Sources/Components/NeedleGenerated.swift $SRCROOT/$TARGETNAME/Sources/Components\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		402F49642335423F00DDB56D /* Sources */ = {
@@ -415,6 +480,7 @@
 				40F48AA9235DD0D9004BE364 /* ChuckJokeRequest.swift in Sources */,
 				402F498623354DEA00DDB56D /* JokeViewProtocol.swift in Sources */,
 				40115D5F23565CC4007691DB /* CNContainer+Predicate.swift in Sources */,
+				40217004235E422900857833 /* NeedleGenerated.swift in Sources */,
 				40E808192339683D0029196B /* ContactsRepository.swift in Sources */,
 				402F498823354E5600DDB56D /* JokePresenterProtocol.swift in Sources */,
 				40B0589023355FAC0069720B /* RandomJokeEndpoint.swift in Sources */,
@@ -428,35 +494,39 @@
 				402F498E23354EFD00DDB56D /* JokeInteractor.swift in Sources */,
 				402F49972335526200DDB56D /* JokesRepository.swift in Sources */,
 				40115D5D23565C8A007691DB /* CNContactStore+Containers.swift in Sources */,
-				40D4BE082362515D00F3E793 /* String+NSRange.swift in Sources */,
+				40D3A69C236332AB009D6BCC /* String+HTMLDecoding.swift in Sources */,
 				40E80815233967A50029196B /* ContactsRepositoryProtocol.swift in Sources */,
-				40983BF22360891300A94591 /* String+HTMLDecoding.swift in Sources */,
 				402F496C2335423F00DDB56D /* AppDelegate.swift in Sources */,
 				40E80817233968110029196B /* Contact.swift in Sources */,
 				40F48AA7235DD09E004BE364 /* PersonJokeRequest.swift in Sources */,
 				40115D6123565D52007691DB /* CNContainer+Contacts.swift in Sources */,
+				402FA90E235F357000BBC5DE /* main.swift in Sources */,
 				40F112E523523DBE00948838 /* Person.swift in Sources */,
 				40B0588E23355F7E0069720B /* Endpoint.swift in Sources */,
 				402F498C23354ECC00DDB56D /* JokeInteractorProtocol.swift in Sources */,
+				40217008235E50A000857833 /* JokeComponent.swift in Sources */,
+				402FA90C235F306200BBC5DE /* Storyboarded.swift in Sources */,
+				40D3A69B236332AB009D6BCC /* String+NSRange.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40983BE2236088F500A94591 /* Sources */ = {
+		402FA8FA235F05C100BBC5DE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D4BE0A236251B400F3E793 /* StringRangeOperationsTests.swift in Sources */,
-				40983BE9236088F500A94591 /* HTMLDecodingTests.swift in Sources */,
+				40D3A69F23633376009D6BCC /* StringRangeOperationsTests.swift in Sources */,
+				402FA901235F05C100BBC5DE /* StoryboardedInstantiationTests.swift in Sources */,
+				40D3A6A023633376009D6BCC /* HTMLDecodingTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		40983BEC236088F500A94591 /* PBXTargetDependency */ = {
+		402FA904235F05C100BBC5DE /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 402F49672335423F00DDB56D /* RandomJokes */;
-			targetProxy = 40983BEB236088F500A94591 /* PBXContainerItemProxy */;
+			targetProxy = 402FA903235F05C100BBC5DE /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -632,7 +702,7 @@
 			};
 			name = Release;
 		};
-		40983BED236088F500A94591 /* Debug */ = {
+		402FA905235F05C100BBC5DE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -653,7 +723,7 @@
 			};
 			name = Debug;
 		};
-		40983BEE236088F500A94591 /* Release */ = {
+		402FA906235F05C100BBC5DE /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -695,16 +765,35 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		40983BEF236088F500A94591 /* Build configuration list for PBXNativeTarget "RandomJokesTests" */ = {
+		402FA907235F05C100BBC5DE /* Build configuration list for PBXNativeTarget "RandomJokesTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				40983BED236088F500A94591 /* Debug */,
-				40983BEE236088F500A94591 /* Release */,
+				402FA905235F05C100BBC5DE /* Debug */,
+				402FA906235F05C100BBC5DE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/uber/needle.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.11.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		40216FFE235E396B00857833 /* NeedleFoundation */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 40216FFD235E396B00857833 /* XCRemoteSwiftPackageReference "needle" */;
+			productName = NeedleFoundation;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 402F49602335423F00DDB56D /* Project object */;
 }

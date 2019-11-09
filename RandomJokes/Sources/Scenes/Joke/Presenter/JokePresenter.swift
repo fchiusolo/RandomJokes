@@ -1,7 +1,7 @@
 import Foundation
 
 struct JokePresenter {
-    let view: JokeViewProtocol
+    var view: JokeViewProtocol?
 }
 
 extension JokePresenter: JokePresenterProtocol {
@@ -9,12 +9,12 @@ extension JokePresenter: JokePresenterProtocol {
         let encodedJokeText = data.joke.text
         let subject = data.subject.toString
         guard let jokeText = String(htmlEncodedString: encodedJokeText) else { return }
-        
-        view.show(joke: jokeText, on: subject)
+   
+        view?.show(joke: jokeText, on: subject)
     }
     
     func update(error: Error) {
-        view.show(error: error.localizedDescription)
+        view?.show(error: error.localizedDescription)
     }
 }
 
