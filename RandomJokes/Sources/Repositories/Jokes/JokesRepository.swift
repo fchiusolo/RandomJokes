@@ -32,14 +32,14 @@ extension JokesRepository: JokesRepositoryProtocol {
                 }
 
                 let result = (try? JSONDecoder().decode(RandomJokeResponse.self, from: data))
-                    .map { $0.value }
+                    .map(\.value)
                     .map(Result.success)
                     ?? .failure(JokesError.parsing)
 
                 DispatchQueue.main.async {
                     handler(result)
                 }
-        }
-        .resume()
+            }
+            .resume()
     }
 }

@@ -1,5 +1,5 @@
-import XCTest
 @testable import RandomJokes
+import XCTest
 
 class HTMLDecodingTests: XCTestCase {
     func testShouldRemoveQuotesEntities() {

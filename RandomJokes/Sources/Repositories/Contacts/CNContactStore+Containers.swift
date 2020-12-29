@@ -1,8 +1,8 @@
-import Foundation
 import Contacts
+import Foundation
 
 extension CNContactStore {
     var allContainers: [CNContainer] {
-        return (try? containers(matching: nil)) ?? []
+        (try? containers(matching: nil)) ?? []
     }
 }

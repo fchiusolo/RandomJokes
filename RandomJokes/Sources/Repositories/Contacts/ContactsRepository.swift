@@ -1,10 +1,10 @@
-import Foundation
 import Contacts
+import Foundation
 
 struct ContactsRepository {
     private static let keysToFetch = [
-        CNContactFormatter.descriptorForRequiredKeys(for: .fullName)
-        ] as [CNKeyDescriptor]
+        CNContactFormatter.descriptorForRequiredKeys(for: .fullName),
+    ] as [CNKeyDescriptor]
 }
 
 extension ContactsRepository: ContactsRepositoryProtocol {

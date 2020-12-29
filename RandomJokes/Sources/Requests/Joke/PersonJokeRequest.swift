@@ -12,9 +12,9 @@ class PersonJokeRequest: Request<(Joke, Person?)> {
     override func execute(success: @escaping ((Joke, Person?)) -> Void, failure: @escaping (Error) -> Void) {
         repository.fetch(person: person) {
             switch $0 {
-            case .success(let joke):
+            case let .success(joke):
                 success(joke)
-            case .failure(let error):
+            case let .failure(error):
                 failure(error)
             }
         }

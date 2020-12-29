@@ -1,8 +1,8 @@
-import Foundation
 import Contacts
+import Foundation
 
 extension CNContainer {
     var matchAll: NSPredicate {
-        return CNContact.predicateForContactsInContainer(withIdentifier: identifier)
+        CNContact.predicateForContactsInContainer(withIdentifier: identifier)
     }
 }

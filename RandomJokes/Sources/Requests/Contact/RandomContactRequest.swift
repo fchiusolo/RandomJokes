@@ -10,9 +10,9 @@ class RandomContactRequest: Request<Contact> {
     override func execute(success: @escaping (Contact) -> Void, failure: @escaping (Error) -> Void) {
         repository.random {
             switch $0 {
-            case .success(let contact):
+            case let .success(contact):
                 success(contact)
-            case .failure(let error):
+            case let .failure(error):
                 failure(error)
             }
         }

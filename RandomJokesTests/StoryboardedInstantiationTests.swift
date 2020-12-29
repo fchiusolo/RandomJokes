@@ -1,6 +1,6 @@
-import XCTest
-import UIKit
 @testable import RandomJokes
+import UIKit
+import XCTest
 
 class StoryboardedInstantiationTests: XCTestCase {
     func testJokeViewControllerInstantiation() {

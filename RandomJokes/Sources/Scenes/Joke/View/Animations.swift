@@ -7,17 +7,17 @@ struct Animation<Subject: UIView> {
 
 extension Animation {
     static func fadeOut(_ duration: TimeInterval = 1) -> Animation {
-        return Animation(duration: duration) {
+        Animation(duration: duration) {
             $0.alpha = 0
         }
     }
 
     static func then(_ job: @escaping (Subject) -> Void) -> Animation {
-        return Animation(duration: 0, animations: job)
+        Animation(duration: 0, animations: job)
     }
 
     static func fadeIn(_ duration: TimeInterval = 1) -> Animation {
-        return Animation(duration: duration) {
+        Animation(duration: duration) {
             $0.alpha = 1
         }
     }
@@ -38,7 +38,7 @@ extension Animatable where Self: UIView {
 
         UIView.animate(
             withDuration: animation.duration,
-            animations: { animation.animations(self)},
+            animations: { animation.animations(self) },
             completion: { [weak self] _ in
                 let rest = animations.dropFirst()
                 self?.animate(Array(rest))

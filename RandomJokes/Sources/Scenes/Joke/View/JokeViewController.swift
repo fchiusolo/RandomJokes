@@ -1,7 +1,7 @@
 import UIKit
 
 class JokeViewController: UIViewController {
-    @IBOutlet weak var jokeLabel: UILabel!
+    @IBOutlet var jokeLabel: UILabel!
     var jokeInteractor: JokeInteractorProtocol!
 }
 
@@ -14,7 +14,7 @@ extension JokeViewController {
                                                             action: #selector(refresh))
     }
 
-    override func viewDidAppear(_ animated: Bool) {
+    override func viewDidAppear(_: Bool) {
         jokeInteractor.fetch()
     }
 }
@@ -33,10 +33,10 @@ extension JokeViewController: JokeViewProtocol {
                 $0.textColor = .black
                 $0.attributedText = joke.highlight(subject, with: .red)
             },
-            .fadeIn(0.75)
+            .fadeIn(0.75),
         ])
     }
-    
+
     func show(error: String) {
         jokeLabel.textColor = .red
         jokeLabel.text = error

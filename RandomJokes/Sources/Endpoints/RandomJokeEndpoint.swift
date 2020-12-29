@@ -9,16 +9,16 @@ extension Endpoint {
         components.queryItems = queryItems
         return components.url
     }
-    
+
     static func randomJoke(person: Person?) -> Endpoint {
         let queryItems = person.map(Endpoint.queryItems) ?? []
         return Endpoint(path: "/jokes/random", queryItems: queryItems)
     }
-    
+
     private static func queryItems(for person: Person) -> [URLQueryItem] {
-        return [
+        [
             URLQueryItem(name: "firstName", value: person.firstName),
-            URLQueryItem(name: "lastName", value: person.lastName)
+            URLQueryItem(name: "lastName", value: person.lastName),
         ]
     }
 }
