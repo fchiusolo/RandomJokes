@@ -9,7 +9,7 @@ struct JokeInteractor {
 extension JokeInteractor: JokeInteractorProtocol {
     func fetch() {
         RandomContactRequest(repository: contactsRepository)
-            .map { $0.person }
+            .map(\.person)
             .chain(success: { PersonJokeRequest(repository: self.jokesRepository, person: $0) },
                    failure: { _ in ChuckJokeRequest(repository: self.jokesRepository) })
             .execute(success: { self.presenter?.update(data: $0) },
@@ -19,6 +19,6 @@ extension JokeInteractor: JokeInteractorProtocol {
 
 private extension Contact {
     var person: Person {
-        return Person(firstName: firstName, lastName: lastName)
+        Person(firstName: firstName, lastName: lastName)
     }
 }

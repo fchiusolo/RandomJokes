@@ -1,14 +1,14 @@
 import Foundation
 
 class Request<T> {
-    func execute(success: @escaping (T) -> Void, failure: @escaping (Error) -> Void) {}
+    func execute(success _: @escaping (T) -> Void, failure _: @escaping (Error) -> Void) {}
 
-    func map<U>(transform: @escaping (T) -> U) -> Request<U> {
-        return MappedRequest(request: self, transform: transform)
+    func map<U>(_ transform: @escaping (T) -> U) -> Request<U> {
+        MappedRequest(request: self, transform: transform)
     }
 
     func chain<U>(success: @escaping (T) -> Request<U>, failure: @escaping (Error) -> Request<U>) -> Request<U> {
-        return ChainedRequest(request: self, success: success, failure: failure)
+        ChainedRequest(request: self, success: success, failure: failure)
     }
 }
 
